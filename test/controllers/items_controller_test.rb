@@ -71,4 +71,3 @@ class ItemsControllerTest < ActionController::TestCase
     assert_equal "Successfully removed Basic Chess Pieces from the system.", flash[:notice]
   end
 end
-
