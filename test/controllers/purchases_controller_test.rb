@@ -32,4 +32,5 @@ class PurchasesControllerTest < ActionController::TestCase
     post :create, purchase: { item_id: @basic_pieces.id, quantity: 50.75 }
     assert_template :new
   end
+
 end
