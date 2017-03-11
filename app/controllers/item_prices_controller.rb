@@ -15,7 +15,7 @@ class ItemPricesController < ApplicationController
             #if saved to database
             @item = Item.find(@item_price.item_id)
             flash[:notice] = "Changed the price of #{Item.find(@item_price.item_id).name}."
-            redirect_to items_path(@item) #error here
+            redirect_to item_path(@item) #error here
         else
             #return to the 'new' form
             render action: 'new'
