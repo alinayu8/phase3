@@ -14,7 +14,7 @@ class PurchasesController < ApplicationController
         @purchase = Purchase.new(purchase_params) #purchase.count not updating
         if @purchase.save
             #if saved to database
-            flash[:notice] = "Successfully added a purchase for #{@purchase.quantity} #{@purchase.item_id.name}."
+            flash[:notice] = "Successfully added a purchase for #{@purchase.quantity} #{Item.find(@purchase.item_id).name}."
             redirect_to purchases_path
         else
             #return to the 'new' form
@@ -28,6 +28,6 @@ class PurchasesController < ApplicationController
         end
 
         def purchase_params
-        params.require(:purchase).permit(:item_id, :quantity, :date) #date?
+            params.require(:purchase).permit(:item_id, :quantity, :date) #date?
         end
 end
