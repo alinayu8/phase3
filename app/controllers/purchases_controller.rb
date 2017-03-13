@@ -1,17 +1,17 @@
 class PurchasesController < ApplicationController
-    # A callback to set up an @owner object to work with 
-    before_action :set_purchase, only: [:show, :edit, :update, :destroy]
+    # A callback to set up an @purchase object to work with 
+    #before_action :set_purchase, only: [:show, :edit, :update, :destroy]
 
     def index
-        @purchases = Purchase.chronological.paginate(page: params[:page]).per_page(10)
+        @purchases = Purchase.all.chronological.paginate(page: params[:page]).per_page(10)
     end
 
     def new
-        @purchase = Purchase.new
     end
 
     def create
-        @purchase = Purchase.new(purchase_params) #purchase.count not updating
+        @purchase = Purchase.new(purchase_params)
+        @purchase.date = Date.current
         if @purchase.save
             #if saved to database
             flash[:notice] = "Successfully added a purchase for #{@purchase.quantity} #{Item.find(@purchase.item_id).name}."
@@ -23,12 +23,11 @@ class PurchasesController < ApplicationController
     end
 
     private
-        def set_purchase
-            @purchase = Purchase.find(params[:id])
-        end
+        # def set_purchase
+        #     @purchase = Purchase.find(params[:id])
+        # end
 
         def purchase_params
-            params.require(:purchase).permit(:item_id, :quantity)
-            #set date to current
+            params.require(:purchase).permit(:item_id, :quantity, :date)
         end
 end

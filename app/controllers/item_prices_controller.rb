@@ -1,12 +1,11 @@
 class ItemPricesController < ApplicationController
-    before_action :set_item_price, only: [:show, :edit, :update, :destroy]
+    #before_action :set_item_price, only: [:show, :edit, :update, :destroy]
 
     def index
         @active_items = Item.active.paginate(page: params[:page]).per_page(10)
     end
 
     def new
-        @item_price = ItemPrice.new
     end
 
     def create
@@ -23,9 +22,9 @@ class ItemPricesController < ApplicationController
     end
 
     private
-        def set_item_price
-            @item_price = ItemPrice.find(params[:id])
-        end
+        # def set_item_price
+        #     @item_price = ItemPrice.find(params[:id])
+        # end
 
         def item_price_params
             params.require(:item_price).permit(:item_id, :price, :start_date)
