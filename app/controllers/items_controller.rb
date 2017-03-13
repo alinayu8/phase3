@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
         if @item.save
             #if saved to database
             flash[:notice] = "Successfully created #{@item.name}."
-            redirect_to items_path(@item) #error here
+            redirect_to item_path(@item) #error here
         else
             #return to the 'new' form
             render action: 'new'
@@ -26,6 +26,9 @@ class ItemsController < ApplicationController
     end
 
     def show
+        @item = @item
+        @price_history = ItemPrice.where(item_id: @item.id).map{|p| p}
+        @similar_items = Item.active.for_category(@item.category).map{|i| i} - [@item]
     end
 
     def edit #did i do this right

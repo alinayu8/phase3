@@ -28,6 +28,7 @@ class PurchasesController < ApplicationController
         end
 
         def purchase_params
-            params.require(:purchase).permit(:item_id, :quantity, :date) #date?
+            params.require(:purchase).permit(:item_id, :quantity)
+            #set date to current
         end
 end
