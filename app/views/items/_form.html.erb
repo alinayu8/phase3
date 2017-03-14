@@ -1,0 +1,50 @@
+<%= form_for @item do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+
+  <div class="field">
+    <%= f.label :item_name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :item_description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :item_category %><br />
+    <%= f.select :category, Item::CATEGORIES %>
+  </div>
+  <div class="field">
+    <%= f.label :item_color %><br />
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :item_weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+	<div class="field">
+    <%= f.label :item_inventory_level %><br />
+    <%= f.text_field :inventory_level %>
+  </div>
+  <div class="field">
+    <%= f.label :item_reorder_level %><br />
+    <%= f.text_field :reorder_level %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  </fieldset>
+<% end %>

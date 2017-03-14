@@ -1,0 +1,17 @@
+<%= @item.name %><br/><br/>
+
+<b>Price:&nbsp;</b><br>
+  <% if @item.current_price.nil? %>
+    <p>N/A</p><br/><br/>
+  <% else %>
+    <%= number_to_currency(@item.current_price) %><br/><br/>
+  <% end %>
+
+<b>Description:&nbsp;</b><br>
+<%= @item.description %><br/><br/>
+
+<b>Inventory Level:&nbsp;</b><br>
+<%= @item.inventory_level %><br /><br />
+
+<b>Color:&nbsp;</b><br>
+  <%= @item.color %><br /><br />

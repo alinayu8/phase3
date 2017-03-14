@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
     end
 
     def new
+        @item = Item.new
     end
 
     def create
@@ -17,7 +18,7 @@ class ItemsController < ApplicationController
         if @item.save
             #if saved to database
             flash[:notice] = "Successfully created #{@item.name}."
-            redirect_to item_path(@item) #error here
+            redirect_to item_path(@item)
         else
             #return to the 'new' form
             render action: 'new'
