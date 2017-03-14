@@ -1,0 +1,90 @@
+<% if Item.count == 0 %>
+    <h1>There are no items in the system at this time</h1>
+<% else %>
+    <h1>Available Items</h1><br>
+    <h2>Boards</h2><br>
+    <table class="board">
+        <thead class="board-datagrid">
+            <th>Name</th>
+            <th>Price</th>
+            <th>Inventory</th>
+            <th>&nbsp;</th>
+        </thead>
+    <% for board in @boards %>
+        <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+        <td><%= link_to board.name, item_path(board) %></td>
+        <td><%= number_to_currency(board.current_price) %></td>
+        <td><%= board.inventory_level %></td>
+        </tr>
+    <% end %>
+    </table>
+
+    <h2>Pieces</h2><br>
+    <table class="piece">
+        <thead class="piece-datagrid">
+            <th>Name</th>
+            <th>Price</th>
+            <th>Inventory</th>
+            <th>&nbsp;</th>
+        </thead>
+    <% for piece in @pieces %>
+        <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+        <td><%= link_to piece.name, item_path(piece) %></td>
+        <td><%= number_to_currency(piece.current_price) %></td>
+        <td><%= piece.inventory_level %></td>
+        </tr>
+    <% end %>
+    </table>
+
+    <h2>Clocks</h2><br>
+    <table class="clock">
+        <thead class="clock-datagrid">
+            <th>Name</th>
+            <th>Price</th>
+            <th>Inventory</th>
+            <th>&nbsp;</th>
+        </thead>
+    <% for clock in @clocks %>
+        <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+        <td><%= link_to clock.name, item_path(clock) %></td>
+        <td><%= number_to_currency(clock.current_price) %></td>
+        <td><%= clock.inventory_level %></td>
+        </tr>
+    <% end %>
+    </table>
+
+    <h2>Supplies</h2><br>
+    <table class="supplies">
+        <thead class="supplies-datagrid">
+            <th>Name</th>
+            <th>Price</th>
+            <th>Inventory</th>
+            <th>&nbsp;</th>
+        </thead>
+    <% for supply in @supplies %>
+        <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+        <td><%= link_to supply.name, item_path(supply) %></td>
+        <td><%= number_to_currency(supply.current_price) %></td>
+        <td><%= supply.inventory_level %></td>
+        </tr>
+    <% end %>
+    </table>
+
+    <h1>Inactive Items</h1><br>
+    <table class="items">
+        <thead class="item-datagrid">
+            <th>Name</th>
+            <th>Price</th>
+            <th>Inventory</th>
+            <th>&nbsp;</th>
+        </thead>
+    <% for item in @inactive_items %>
+        <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+        <td><%= link_to item.name, item_path(item) %></td>
+        <td><%= number_to_currency(item.current_price) %></td>
+        <td><%= item.inventory_level %></td>
+        </tr>
+    <% end %>
+    </table>
+
+<% end %>
