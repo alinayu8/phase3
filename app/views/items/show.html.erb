@@ -1,0 +1,45 @@
+<%= @item.name %>
+
+<b>Price:&nbsp;</b><br>
+  <%= number_to_currency(@item.current_price) %><br>
+  <%= @item.description %>
+
+<b>Inventory Level:&nbsp;</b><br>
+  <%= @item.inventory_level %><br /><br />
+
+<b>Color:&nbsp;</b><br>
+  <%= @item.color %><br /><br />
+
+<b>Price History:&nbsp;</b>
+  <table class="history">
+        <thead class="history-datagrid">
+            <th>Price</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>&nbsp;</th>
+        </thead>
+    <% for price in @price_history %>
+        <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+        <td><%= number_to_currency(price.price) %></td>
+        <td><%= price.start_date %></td>
+        <td><%= price.end_date %></td>
+        </tr>
+    <% end %>
+    </table>
+
+<b>Similar Items:&nbsp;</b>
+  <table class="sim_items">
+        <thead class="sim-datagrid">
+            <th>Name</th>
+            <th>Price</th>
+            <th>Inventory</th>
+            <th>&nbsp;</th>
+        </thead>
+    <% for item in @similar_items %>
+        <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+        <td><%= link_to item.name, item_path(item) %></td>
+        <td><%= number_to_currency(item.current_price) %></td>
+        <td><%= item.inventory_level %></td>
+        </tr>
+    <% end %>
+    </table>
