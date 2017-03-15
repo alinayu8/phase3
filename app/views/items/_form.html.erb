@@ -33,10 +33,14 @@
     <%= f.label :item_weight %><br />
     <%= f.text_field :weight %>
   </div>
-	<div class="field">
-    <%= f.label :item_inventory_level %><br />
-    <%= f.text_field :inventory_level %>
-  </div>
+  
+  <%unless Item.all.include?(@item) %>
+    <div class="field">
+      <%= f.label :item_inventory_level %><br />
+      <%= f.text_field :inventory_level %>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= f.label :item_reorder_level %><br />
     <%= f.text_field :reorder_level %>
