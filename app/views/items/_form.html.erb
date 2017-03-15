@@ -23,7 +23,7 @@
   </div>
   <div class="field">
     <%= f.label :item_category %><br />
-    <%= f.select :category, Item::CATEGORIES %>
+    <%= f.select :category, Item::CATEGORIES, prompt: "Select..." %>
   </div>
   <div class="field">
     <%= f.label :item_color %><br />
