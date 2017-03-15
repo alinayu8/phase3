@@ -2,4 +2,20 @@
 <%= link_to "Purchases", purchases_path %>
 <%= link_to "Prices", item_prices_path %>
 
+<h1>Reorder List</h1><br>
+<table class="datagrid">
+    <thead class="head-datagrid">
+        <th>Item</th>
+        <th>Inventory</th>
+        <th>Reorder Level</th>
+    </thead>
+<% for item in @items_to_reorder %>
+    <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+    <td><%= item.name %></td>
+    <td><%= item.inventory_level %></td>
+    <td><%= item.reorder_level %></td>
+    </tr>
+<% end %>
+</table>
+
 <div id="footer">Webmaster</div>
