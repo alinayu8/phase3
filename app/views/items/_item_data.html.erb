@@ -6,7 +6,7 @@
 
 <b>Price:&nbsp;</b><br>
   <% if @item.current_price.nil? %>
-    <p>N/A</p><br/><br/>
+    <p>N/A</p>
   <% else %>
     <%= number_to_currency(@item.current_price) %><br/><br/>
   <% end %>

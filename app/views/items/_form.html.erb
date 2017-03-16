@@ -1,7 +1,7 @@
   <%= form_for @item do |f| %>
     <% if @item.errors.any? %>
 
-      <fieldset>
+      <fieldset class="field_set">
 
       <div id="error_explanation">
         <h5><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h5>
