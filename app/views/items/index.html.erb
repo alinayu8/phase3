@@ -1,18 +1,15 @@
-<%= link_to "Items", items_path %>
-<%= link_to "Purchases", purchases_path %>
-<%= link_to "Prices", item_prices_path %>
+<div class="center-title">
 
 <% if Item.count == 0 %>
-    <h1>There are no items in the system at this time</h1>
+    <h3>There are no items in the system at this time</h3>
 <% else %>
-    <h1>Available Items</h1><br>
-    <h2>Boards</h2><br>
-    <table class="board">
-        <thead class="board-datagrid">
+    <br><h3>Available Items</h3><br>
+    <h4>Boards</h4><br>
+    <table class="center-datagrid">
+        <thead class="header-datagrid">
             <th>Name</th>
             <th>Price</th>
             <th>Inventory</th>
-            <th>&nbsp;</th>
         </thead>
     <% for board in @boards %>
         <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
@@ -23,13 +20,12 @@
     <% end %>
     </table>
 
-    <h2>Pieces</h2><br>
-    <table class="piece">
-        <thead class="piece-datagrid">
+    <h4>Pieces</h4><br>
+    <table class="center-datagrid">
+        <thead class="header-datagrid">
             <th>Name</th>
             <th>Price</th>
             <th>Inventory</th>
-            <th>&nbsp;</th>
         </thead>
     <% for piece in @pieces %>
         <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
@@ -40,13 +36,12 @@
     <% end %>
     </table>
 
-    <h2>Clocks</h2><br>
-    <table class="clock">
-        <thead class="clock-datagrid">
+    <h4>Clocks</h4><br>
+    <table class="center-datagrid">
+        <thead class="header-datagrid">
             <th>Name</th>
             <th>Price</th>
             <th>Inventory</th>
-            <th>&nbsp;</th>
         </thead>
     <% for clock in @clocks %>
         <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
@@ -57,13 +52,12 @@
     <% end %>
     </table>
 
-    <h2>Supplies</h2><br>
-    <table class="supplies">
-        <thead class="supplies-datagrid">
+    <h4>Supplies</h4><br>
+    <table class="center-datagrid">
+        <thead class="header-datagrid">
             <th>Name</th>
             <th>Price</th>
             <th>Inventory</th>
-            <th>&nbsp;</th>
         </thead>
     <% for supply in @supplies %>
         <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
@@ -74,13 +68,12 @@
     <% end %>
     </table>
 
-    <h1>Inactive Items</h1><br>
-    <table class="items">
-        <thead class="item-datagrid">
+    <h3>Inactive Items</h3><br>
+    <table class="center-datagrid">
+        <thead class="header-datagrid">
             <th>Name</th>
             <th>Price</th>
             <th>Inventory</th>
-            <th>&nbsp;</th>
         </thead>
     <% for item in @inactive_items %>
         <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
@@ -92,3 +85,5 @@
     </table>
 
 <% end %>
+
+</div>
