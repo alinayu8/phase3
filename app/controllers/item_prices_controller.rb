@@ -2,7 +2,7 @@ class ItemPricesController < ApplicationController
     #before_action :set_item_price, only: [:show, :edit, :update, :destroy]
 
     def index
-        @active_items = Item.active.paginate(page: params[:page]).per_page(10)
+        @active_items = Item.active.all
     end
 
     def new

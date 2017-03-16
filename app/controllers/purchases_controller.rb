@@ -3,7 +3,8 @@ class PurchasesController < ApplicationController
     #before_action :set_purchase, only: [:show, :edit, :update, :destroy]
 
     def index
-        @purchases = Purchase.all.chronological.paginate(page: params[:page]).per_page(10)
+        active_items = Item.active.all.map(&:id)
+        @purchases = Purchase.chronological.all
     end
 
     def new
