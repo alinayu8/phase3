@@ -2,7 +2,6 @@
 
 <div class="center-title"
     <div class="row">
-        <div class="small-2 large-4 columns"> <%= link_to "New Item", new_item_path %> </div>
         <div class="small-4 large-4 columns"> <%= link_to "Edit Item", edit_item_path(@item) %> </div>
         <div class="small-4 large-4 columns"> <%= link_to "Destroy Item", @item, method: :delete, data: { confirm: 'Are you sure you wish to delete this information?' } %> </div>
     </div>

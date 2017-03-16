@@ -13,12 +13,14 @@
             <th>Name</th>
             <th>Price</th>
             <th>Inventory</th>
+            <th> </th>
         </thead>
     <% for board in @boards %>
         <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
         <td><%= link_to board.name, item_path(board) %></td>
         <td><%= number_to_currency(board.current_price) %></td>
         <td><%= board.inventory_level %></td>
+        <td><%= link_to "Edit", edit_item_path(board) %></td>
         </tr>
     <% end %>
     </table>
@@ -29,12 +31,14 @@
             <th>Name</th>
             <th>Price</th>
             <th>Inventory</th>
+            <th> </th>
         </thead>
     <% for piece in @pieces %>
         <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
         <td><%= link_to piece.name, item_path(piece) %></td>
         <td><%= number_to_currency(piece.current_price) %></td>
         <td><%= piece.inventory_level %></td>
+        <td><%= link_to "Edit", edit_item_path(piece) %></td>
         </tr>
     <% end %>
     </table>
@@ -45,12 +49,14 @@
             <th>Name</th>
             <th>Price</th>
             <th>Inventory</th>
+            <th> </th>
         </thead>
     <% for clock in @clocks %>
         <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
         <td><%= link_to clock.name, item_path(clock) %></td>
         <td><%= number_to_currency(clock.current_price) %></td>
         <td><%= clock.inventory_level %></td>
+        <td><%= link_to "Edit", edit_item_path(clock) %></td>
         </tr>
     <% end %>
     </table>
@@ -61,12 +67,14 @@
             <th>Name</th>
             <th>Price</th>
             <th>Inventory</th>
+            <th> </th>
         </thead>
     <% for supply in @supplies %>
         <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
         <td><%= link_to supply.name, item_path(supply) %></td>
         <td><%= number_to_currency(supply.current_price) %></td>
         <td><%= supply.inventory_level %></td>
+        <td><%= link_to "Edit", edit_item_path(supply) %></td>
         </tr>
     <% end %>
     </table>
@@ -84,12 +92,14 @@
             <th>Name</th>
             <th>Price</th>
             <th>Inventory</th>
+            <th> </th>
         </thead>
     <% for item in @inactive_items %>
         <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
         <td><%= link_to item.name, item_path(item) %></td>
         <td><%= number_to_currency(item.current_price) %></td>
         <td><%= item.inventory_level %></td>
+        <td><%= link_to "Edit", edit_item_path(item) %></td>
         </tr>
     <% end %>
     </table>
