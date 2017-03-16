@@ -112,6 +112,98 @@ label {
   padding-right: 4px;
 }
 
+
+/* Home page */
+
+.center-title {
+  text-align: center;
+}
+
+.center-datagrid {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Navigation bar */
+
+$header-bg: #074E68;
+$subnav-link-padding: 0.9rem;
+$subnav-font-size: 0.75rem;
+$subnav-link-opacity: 0.15;
+$header-height: 2.5rem;
+$transition: all .35s ease-in-out;
+
+/* Dropdown */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: -17px;
+    background: #074E68;
+    width: 115px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Actual navbar */
+
+.header {
+  text-align: center;
+  background: $header-bg;
+  background-size: cover;
+  position: relative;
+  overflow: visible;
+  padding-top: $header-height;
+  padding-bottom: $header-height + ($subnav-link-padding * 2 + $subnav-font-size - 0.15rem);
+  
+  .headline {
+    color: #ffe;
+  }
+}
+
+.header-subnav {
+  float: none;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
+
+  li {
+    float: none;
+    display: inline-block;
+    width: 115px;
+
+    a {
+      font-size: $subnav-font-size;
+      color: #ffe;
+      text-transform: uppercase;
+      display: block;
+      font-weight: bold;
+      letter-spacing: 1px;
+
+      &.is-active {
+        background: rgba(250,250,250,$subnav-link-opacity);
+      }
+
+      &:hover {
+        background: rgba(250,250,250,$subnav-link-opacity);
+      }
+        
+    }
+  }
+}
+
 .header {
   text-align: center;
   background: #074E68;
@@ -147,72 +239,3 @@ label {
       .header-subnav li a:hover {
         background: rgba(250, 250, 250, 0.15);
         transition: all 0.35s ease-in-out; }
-
-        /* Home page */
-
-.center-title {
-  text-align: center;
-}
-
-.center-datagrid {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Navigation bar */
-
-$header-bg: #074E68;
-$subnav-link-padding: 0.9rem;
-$subnav-font-size: 0.75rem;
-$subnav-link-opacity: 0.15;
-$header-height: 2.5rem;
-$transition: all .35s ease-in-out;
-
-.header {
-  text-align: center;
-  background: $header-bg;
-  background-size: cover;
-  position: relative;
-  overflow: visible;
-  padding-top: $header-height;
-  padding-bottom: $header-height + ($subnav-link-padding * 2 + $subnav-font-size - 0.15rem);
-  
-  .headline {
-    color: #ffe;
-  }
-}
-
-.header-subnav {
-  float: none;
-  position: absolute;
-  text-align: center;
-  margin: 0 auto;
-  bottom: 0;
-  width: 100%;
-
-  li {
-    float: none;
-    display: inline-block;
-
-    a {
-      padding: $subnav-link-padding 1rem;
-      font-size: $subnav-font-size;
-      color: #ffe;
-      text-transform: uppercase;
-      display: block;
-      font-weight: bold;
-      letter-spacing: 1px;
-      transition: $transition;
-      
-      &.is-active {
-        background: rgba(250,250,250,$subnav-link-opacity);
-      }
-
-      &:hover {
-        background: rgba(250,250,250,$subnav-link-opacity);
-        transition: $transition;
-      }
-    }
-  }
-}
-

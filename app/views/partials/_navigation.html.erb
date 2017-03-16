@@ -1,11 +1,29 @@
 <header class="header">
   <h1 class="headline">Chess Store</h1>
   <ul class="header-subnav">
-    <li><%= link_to "Items", items_path %></li>
-    <li><%= link_to "Purchases", purchases_path %></li>
-    <li><%= link_to "Prices", item_prices_path %></li>
+    <div class="dropdown">
+    <li><a>Items</a></li>
+      <ul class="dropdown-content">
+        <li><%= link_to "View All Items", items_path %></li>
+        <li><%= link_to "New Item", new_item_path %></li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+    <li><a>Purchases</a></li>
+      <ul class="dropdown-content">
+        <li><%= link_to "View All Purchases", purchases_path %></li>
+        <li><%= link_to "New Purchase", new_purchase_path %></li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+    <li><a>Prices</a></li>
+      <ul class="dropdown-content">
+        <li><%= link_to "View All Prices", item_prices_path %></li>
+        <li><%= link_to "New Price", new_item_price_path %></li>
+      </ul>
+    </div>
+
   </ul>
 </header>
-
-
-
