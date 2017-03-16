@@ -1,10 +1,13 @@
-<div class="center-title">
-
 <% if Item.count == 0 %>
-    <h3>There are no items in the system at this time</h3>
+    <h3 class="center-title">There are no items in the system at this time</h3>
 <% else %>
-    <br><h3>Available Items</h3><br>
-    <h4>Boards</h4><br>
+    <div class="row">
+
+    <div class="large-6 columns">
+
+    <br><h3 class="center-title">Available Items</h3>
+    <hr>
+    <h5>Boards</h5><br>
     <table class="center-datagrid">
         <thead class="header-datagrid">
             <th>Name</th>
@@ -20,7 +23,7 @@
     <% end %>
     </table>
 
-    <h4>Pieces</h4><br>
+    <h5>Pieces</h5><br>
     <table class="center-datagrid">
         <thead class="header-datagrid">
             <th>Name</th>
@@ -36,7 +39,7 @@
     <% end %>
     </table>
 
-    <h4>Clocks</h4><br>
+    <h5>Clocks</h5><br>
     <table class="center-datagrid">
         <thead class="header-datagrid">
             <th>Name</th>
@@ -52,7 +55,7 @@
     <% end %>
     </table>
 
-    <h4>Supplies</h4><br>
+    <h5>Supplies</h5><br>
     <table class="center-datagrid">
         <thead class="header-datagrid">
             <th>Name</th>
@@ -68,7 +71,14 @@
     <% end %>
     </table>
 
-    <h3>Inactive Items</h3><br>
+    </div>
+
+    <div class="large-6 columns">
+
+    <br><h3 class="center-title">Inactive Items</h3>
+
+    <hr>
+
     <table class="center-datagrid">
         <thead class="header-datagrid">
             <th>Name</th>
@@ -83,7 +93,9 @@
         </tr>
     <% end %>
     </table>
-
-<% end %>
+    
+    </div>
 
 </div>
+<% end %>
+

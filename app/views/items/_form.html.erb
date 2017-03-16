@@ -1,58 +1,60 @@
-<%= link_to "Items", items_path %>
-<%= link_to "Purchases", purchases_path %>
-<%= link_to "Prices", item_prices_path %>
+  <%= form_for @item do |f| %>
+    <% if @item.errors.any? %>
 
-<%= form_for @item do |f| %>
-  <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <fieldset>
 
-      <ul>
-      <% @item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <div id="error_explanation">
+        <h5><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h5>
 
-  <fieldset>
+        <ul>
+        <% @item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
 
-  <div class="field">
-    <%= f.label :item_name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :item_description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :item_category %><br />
-    <%= f.select :category, Item::CATEGORIES, prompt: "Select..." %>
-  </div>
-  <div class="field">
-    <%= f.label :item_color %><br />
-    <%= f.text_field :color %>
-  </div>
-  <div class="field">
-    <%= f.label :item_weight %><br />
-    <%= f.text_field :weight %>
-  </div>
-  
-  <%unless Item.all.include?(@item) %>
+      </fieldset>
+
+    <% end %>
+
+    <fieldset>
+
     <div class="field">
-      <%= f.label :item_inventory_level %><br />
-      <%= f.text_field :inventory_level %>
+      <%= f.label :item_name %><br />
+      <%= f.text_field :name %>
     </div>
+    <div class="field">
+      <%= f.label :item_description %><br />
+      <%= f.text_field :description %>
+    </div>
+    <div class="field">
+      <%= f.label :item_category %><br />
+      <%= f.select :category, Item::CATEGORIES, prompt: "Select..." %>
+    </div>
+    <div class="field">
+      <%= f.label :item_color %><br />
+      <%= f.text_field :color %>
+    </div>
+    <div class="field">
+      <%= f.label :item_weight %><br />
+      <%= f.text_field :weight %>
+    </div>
+    
+    <%unless Item.all.include?(@item) %>
+      <div class="field">
+        <%= f.label :item_inventory_level %><br />
+        <%= f.text_field :inventory_level %>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :item_reorder_level %><br />
+      <%= f.text_field :reorder_level %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+    </fieldset>
   <% end %>
-
-  <div class="field">
-    <%= f.label :item_reorder_level %><br />
-    <%= f.text_field :reorder_level %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-  </fieldset>
-<% end %>

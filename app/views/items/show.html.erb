@@ -1,10 +1,10 @@
-<%= link_to "Items", items_path %>
-<%= link_to "Purchases", purchases_path %>
-<%= link_to "Prices", item_prices_path %>
+<div class="row">
+
+  <div class="small-8 large-centered columns">
 
 <table>
 	<tr valign="top">
-        <%= flash[:notice] %>	<br>	
+		<br>
 		<%= render partial: "item_data" %>		
 	
 		<% unless @price_history.empty? %>
@@ -14,3 +14,7 @@
         <%= render partial: "similar_items" %>
 	</tr>
 </table>
+
+</div>
+
+</div>

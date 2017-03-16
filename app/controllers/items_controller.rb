@@ -31,9 +31,7 @@ class ItemsController < ApplicationController
         @similar_items = Item.active.for_category(@item.category).map{|i| i} - [@item]
     end
 
-    def edit #did i do this right
-        # @items = Item.active.paginate(page: params[:page]).per_page(10)
-        # render action: 'edit'
+    def edit
     end
 
     def update

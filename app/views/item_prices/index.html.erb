@@ -1,13 +1,10 @@
-<%= link_to "Items", items_path %>
-<%= link_to "Purchases", purchases_path %>
-<%= link_to "Prices", item_prices_path %>
-
 <% if ItemPrice.count == 0 %>
     <h1>N/A</h1>
 <% else %>
-    <h1>Current Item Prices</h1><br>
-    <table class="itemprices">
-        <thead class="price-datagrid">
+    <br><h3 class="center-title">Current Item Prices</h3>
+    <hr>
+    <table class="center-datagrid">
+        <thead class="header-datagrid">
             <th>Item</th>
             <th>Price</th>
             <th>&nbsp;</th>

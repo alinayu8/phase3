@@ -1,11 +1,10 @@
-<%= link_to "Items", items_path %>
-<%= link_to "Purchases", purchases_path %>
-<%= link_to "Prices", item_prices_path %>
-
 <%= form_for @item_price do |f| %>
   <% if @item_price.errors.any? %>
+
+    <fieldset>
+
     <div id="error_explanation">
-      <h2><%= pluralize(@item_price.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <h5><%= pluralize(@item_price.errors.count, "error") %> prohibited this item from being saved:</h5>
 
       <ul>
       <% @item_price.errors.full_messages.each do |msg| %>
@@ -14,6 +13,8 @@
       </ul>
     </div>
   <% end %>
+
+  </fieldset>
 
   <fieldset>
 

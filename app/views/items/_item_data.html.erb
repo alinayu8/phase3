@@ -1,4 +1,8 @@
-<%= @item.name %><br/><br/>
+<h5> <b> <%= @item.name %> </b> </h5>
+
+<hr>
+
+<%= render partial: "crud" %>
 
 <b>Price:&nbsp;</b><br>
   <% if @item.current_price.nil? %>
