@@ -1,16 +1,20 @@
-    <h1>Recent Purchases</h1><br>
-    <table class="purchases">
-        <thead class="purchase-datagrid">
-            <th>Item</th>
-            <th>Quantity</th>
-            <th>Date</th>
-        </thead>
-    <% for purchase in @purchases %>
-        <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
-        <td><%= link_to Item.find(purchase.item_id).name, item_path(Item.find(purchase.item_id)) %></td>
-        <td><%= purchase.quantity %></td>
-        <td><%= purchase.date.strftime("%m/%d/%y") %></td>
-        </tr>
-    <% end %>
-    </table>
+<%= link_to "Items", items_path %>
+<%= link_to "Purchases", purchases_path %>
+<%= link_to "Prices", item_prices_path %>
+
+<h1>Recent Purchases</h1><br>
+<table class="purchases">
+    <thead class="purchase-datagrid">
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Date</th>
+    </thead>
+<% for purchase in @purchases %>
+    <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+    <td><%= link_to Item.find(purchase.item_id).name, item_path(Item.find(purchase.item_id)) %></td>
+    <td><%= purchase.quantity %></td>
+    <td><%= purchase.date.strftime("%m/%d/%y") %></td>
+    </tr>
+<% end %>
+</table>
 
