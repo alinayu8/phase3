@@ -8,6 +8,11 @@
     <br><h3 class="center-title">Available Items</h3>
     <hr>
     <h5>Boards</h5><br>
+
+    <%if @boards.empty? %>
+    <h4 class="center-title">No boards available</h4>
+    <% else %>
+
     <table class="datagrid">
         <thead class="header-datagrid">
             <th>Name</th>
@@ -24,8 +29,14 @@
         </tr>
     <% end %>
     </table>
+    <%end%>
 
     <h5>Pieces</h5><br>
+
+    <%if @pieces.empty? %>
+    <h4 class="center-title">No pieces available</h4>
+    <% else %>
+
     <table class="datagrid">
         <thead class="header-datagrid">
             <th>Name</th>
@@ -42,8 +53,14 @@
         </tr>
     <% end %>
     </table>
+    <% end %>
 
     <h5>Clocks</h5><br>
+
+    <%if @clocks.empty? %>
+    <h4 class="center-title">No clocks available</h4>
+    <% else %>
+
     <table class="datagrid">
         <thead class="header-datagrid">
             <th>Name</th>
@@ -60,8 +77,14 @@
         </tr>
     <% end %>
     </table>
+    <% end %>
 
     <h5>Supplies</h5><br>
+
+    <%if @supplies.empty? %>
+    <h4 class="center-title">No supplies available</h4>
+    <% else %>
+
     <table class="datagrid">
         <thead class="header-datagrid">
             <th>Name</th>
@@ -78,6 +101,7 @@
         </tr>
     <% end %>
     </table>
+    <% end %>
 
     </div>
 
@@ -86,6 +110,10 @@
     <br><h3 class="center-title">Inactive Items</h3>
 
     <hr>
+
+    <%if @inactive_items.empty? %>
+    <h4 class="center-title">No inactive items</h4>
+    <% else %>
 
     <table class="center-datagrid">
         <thead class="header-datagrid">
@@ -103,6 +131,7 @@
         </tr>
     <% end %>
     </table>
+    <% end %>
     
     </div>
 

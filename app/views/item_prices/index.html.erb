@@ -3,6 +3,11 @@
 <% else %>
     <br><h3 class="center-title">Current Item Prices</h3>
     <hr>
+
+    <%if @active_items.empty? %>
+    <h4 class="center-title">No current item prices</h4>
+    <% else %>
+
     <table class="center-datagrid">
         <thead class="header-datagrid">
             <th>Item</th>
@@ -15,5 +20,6 @@
         </tr>
     <% end %>
     </table>
+    <% end %>
 
 <% end %>

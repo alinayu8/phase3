@@ -1,11 +1,17 @@
 <br><h3 class="center-title">Recent Purchases</h3>
 <hr>
+
+<%if @purchases.empty? %>
+<h4 class="center-title">No recent purchases</h4>
+<% else %>
+
 <table class="center-datagrid">
     <thead class="header-datagrid">
         <th>Item</th>
         <th>Quantity</th>
         <th>Date</th>
     </thead>
+
 <% for purchase in @purchases %>
     <% if Item.exists?(purchase.item_id) %>
         <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">  
@@ -17,3 +23,4 @@
 <% end %>
 </table>
 
+<% end %>
