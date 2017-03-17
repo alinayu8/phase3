@@ -2,7 +2,7 @@ class ItemPricesController < ApplicationController
     #before_action :set_item_price, only: [:show, :edit, :update, :destroy]
 
     def index
-        @active_items = Item.active.all
+        @active_items = Item.alphabetical.active.all
     end
 
     def new
