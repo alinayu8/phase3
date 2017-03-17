@@ -3,7 +3,7 @@
   <h1 class="headline"> <%= link_to "A&M Chess Store", home_path %> </h1>
   <ul class="header-subnav">
     <div class="dropdown">
-    <li><a>Items</a></li>
+    <li><a><%= link_to "Items", items_path %></a></li>
       <ul class="dropdown-content">
         <li><%= link_to "View All Items", items_path %></li>
         <li><%= link_to "New Item", new_item_path %></li>
@@ -11,7 +11,7 @@
     </div>
 
     <div class="dropdown">
-    <li><a>Purchases</a></li>
+    <li><a><%= link_to "Purchases", purchases_path %></a></li>
       <ul class="dropdown-content">
         <li><%= link_to "View All Purchases", purchases_path %></li>
         <li><%= link_to "New Purchase", new_purchase_path %></li>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="dropdown">
-    <li><a>Prices</a></li>
+    <li><a><%= link_to "Prices", item_prices_path %></a></li>
       <ul class="dropdown-content">
         <li><%= link_to "View All Prices", item_prices_path %></li>
         <li><%= link_to "New Price", new_item_price_path %></li>
