@@ -1,33 +1,30 @@
 <%= form_for @purchase do |f| %>
-  <% if @purchase.errors.any? %>
-    
+  <!-- ERRORS -->
+  <% if @purchase.errors.any? %> 
     <fieldset class="field_set">
-    <div id="error_explanation">
-      <h5><%= pluralize(@purchase.errors.count, "error") %> prohibited this item from being saved:</h5>
-
-      <ul>
-      <% @purchase.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+      <div id="error_explanation">
+        <h5><%= pluralize(@purchase.errors.count, "error") %> prohibited this item from being saved:</h5>
+        <ul>
+        <% @purchase.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </fieldset>
   <% end %>
 
+  <!-- FORM -->
   <fieldset>
-
-  <div class="field">
-    <%= f.label :purchase_item_id %><br />
-    <%= f.collection_select :item_id, Item.active.all, :id, :name, prompt: "Select..." %>
-  </div>
-  <div class="field">
-    <%= f.label :purchase_quantity %><br />
-    <%= f.text_field :quantity %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
+    <div class="field">
+      <%= f.label :purchase_item_id %><br />
+      <%= f.collection_select :item_id, Item.active.all, :id, :name, prompt: "Select..." %>
+    </div>
+    <div class="field">
+      <%= f.label :purchase_quantity %><br />
+      <%= f.text_field :quantity %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </fieldset>
 <% end %>

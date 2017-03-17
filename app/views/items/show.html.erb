@@ -1,20 +1,17 @@
+<!-- center grid -->
 <div class="row">
-
   <div class="small-8 large-centered columns">
+		<table>
+			<tr valign="top"><br>
+				<%= render partial: "item_data" %>	
 
-<table>
-	<tr valign="top">
-		<br>
-		<%= render partial: "item_data" %>		
-	
-		<% unless @price_history.empty? %>
-		  <%= render partial: "price_history" %>
-		<% end %>
+				<!-- if no prices, don't display price history -->
+				<% unless @price_history.empty? %>
+					<%= render partial: "price_history" %>
+				<% end %>
 
-        <%= render partial: "similar_items" %>
-	</tr>
-</table>
-
-</div>
-
+				<%= render partial: "similar_items" %>
+			</tr>
+		</table>
+	</div>
 </div>

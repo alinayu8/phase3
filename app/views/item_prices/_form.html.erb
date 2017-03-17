@@ -1,35 +1,31 @@
 <%= form_for @item_price do |f| %>
+  <!-- Errors -->
   <% if @item_price.errors.any? %>
-
     <fieldset class="field_set">
-
-    <div id="error_explanation">
-      <h5><%= pluralize(@item_price.errors.count, "error") %> prohibited this item from being saved:</h5>
-
-      <ul>
-      <% @item_price.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+      <div id="error_explanation">
+        <h5><%= pluralize(@item_price.errors.count, "error") %> prohibited this item from being saved:</h5>
+        <ul>
+          <% @item_price.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </fieldset>
   <% end %>
 
-  </fieldset>
-
+  <!-- Form -->
   <fieldset>
+    <div class="field">
+      <%= f.label :item_price_item_id %><br />
+      <%= f.collection_select :item_id, Item.active.all, :id, :name, prompt: "Select..." %>
+    </div>
+    <div class="field">
+      <%= f.label :item_price_price %><br />
+      <%= f.text_field :price %>
+    </div>
 
-  <div class="field">
-    <%= f.label :item_price_item_id %><br />
-    <%= f.collection_select :item_id, Item.active.all, :id, :name, prompt: "Select..." %>
-  </div>
-  <div class="field">
-    <%= f.label :item_price_price %><br />
-    <%= f.text_field :price %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </fieldset>
 <% end %>

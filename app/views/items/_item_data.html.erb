@@ -1,15 +1,15 @@
 <h5> <b> <%= @item.name %> </b> </h5>
-
 <hr>
-
+<!-- Edit or Delete Item -->
 <%= render partial: "crud" %>
 
+<!-- Prices -->
 <b>Price:&nbsp;</b><br>
-  <% if @item.current_price.nil? %>
-    <p>N/A</p>
-  <% else %>
-    <%= number_to_currency(@item.current_price) %><br/><br/>
-  <% end %>
+<% if @item.current_price.nil? %>
+  <p>N/A</p>
+<% else %>
+  <%= number_to_currency(@item.current_price) %><br/><br/>
+<% end %>
 
 <b>Description:&nbsp;</b><br>
 <%= @item.description %><br/><br/>
