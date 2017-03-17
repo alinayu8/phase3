@@ -4,7 +4,6 @@ class HomeController < ApplicationController
         @items_to_reorder = Item.active.alphabetical.need_reorder
     end
 
-#this is correct
     def about
     end
 
@@ -13,5 +12,4 @@ class HomeController < ApplicationController
 
     def privacy
     end
-#
 end

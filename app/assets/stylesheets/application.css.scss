@@ -185,6 +185,9 @@ $transition: all .35s ease-in-out;
     a {
       color: #ffe;
     }
+    a:hover {
+      color: #ffe !important;
+    }
     
 }
 
@@ -257,3 +260,8 @@ $transition: all .35s ease-in-out;
       .header-subnav li a:hover {
         background: rgba(0, 0, 0, 0.3);
         transition: all 0.35s ease-in-out; }
+
+/* Alert box */
+.alert-box {
+  margin-bottom: 0 !important; 
+}
